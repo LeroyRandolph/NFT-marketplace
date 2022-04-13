@@ -6,15 +6,14 @@ import { AiOutlineSearch } from 'react-icons/ai'
 import { ConnectWallet } from '@3rdweb/react'
 
 const style = {
-  wrapper: `bg-[#00000] w-screen px-[1.2rem] py-[0.8rem] flex`,
+  wrapper: `bg-[#00000] flex flex-grow sm:flex-row m-4 justify-between items-center h-auto`,
   logoContainer: `flex items-center cursor-pointer`,
   logoText: ` ml-[1rem] text-black font-uber font-bold  text-2xl`,
-  searchBar: `flex flex-1 mx-[0.8rem] w-max-[550px] items-center bg-[#363840] border-2 border-[#363840] rounded-[0.8rem] hover:bg-[#4c505c] hover:border-[#7A0BC0] `,
+  searchBar: `flex flex-1 mx-[0.8rem] items-center bg-[#363840] border-2 border-[#363840] rounded-[0.8rem]`,
   searchIcon: `text-[#8a939b] mx-3 font-bold text-lg`,
-  searchInput: `h-[2.6rem] w-full border-0 bg-transparent outline-0 ring-0 px-2 pl-0 text-[#e6e8eb] placeholder:text-[#8a939b]`,
+  searchInput: `h-[2.6rem] w-full border-0 bg-transparent outline-0 ring-0 px-2 pl-0 text-white placeholder:text-gray`,
   headerItems: `flex items-center justify-end`,
-  headerItem: `text-white px-4 font-black text-l text-[#7A0BC0] cursor-pointer no-underline hover:underline hover:decoration-[#7A0BC0]`,
-  headerIcon: `text-[#7A0BC0] text-l font-black px-4 cursor-pointer no-underline hover:underline`,
+  headerItem: `text-white px-4 font-black text-l text-[#7A0BC0] cursor-pointer hover:decoration-[#7A0BC0] hover:scale-110 duration-100`,
 }
 
 const Header = () => {
@@ -32,17 +31,25 @@ const Header = () => {
         </div>
         <input
           className={style.searchInput}
-          placeholder="Search items, collections, and accounts"
+          placeholder="Search items and collections"
         />
       </div>
       <div className={style.headerItems}>
-        <div className={style.headerItem}>Collections</div>
-        <div className={style.headerItem}>Stats</div>
-        <div className={style.headerItem}>Resources</div>
-        <div className={style.headerItem}>Create</div>
+        <a className={style.headerItem} href="/Collections">
+          Collections
+        </a>
+        <a className={style.headerItem} href="/">
+          Create
+        </a>
+        <a className={style.headerItem} href="/">
+          MyNFTs
+        </a>
         <div className={style.headerIcon}>
-          {/* <MdOutlineAccountBalanceWallet /> */}
-          <ConnectWallet />
+          <Link href="/Signin">
+            <button class="rounded-full bg-[#663399] py-2 px-4 font-bold text-white hover:bg-[#602f6b]">
+              Sign In
+            </button>
+          </Link>
         </div>
       </div>
     </div>

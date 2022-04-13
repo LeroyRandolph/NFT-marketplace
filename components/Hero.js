@@ -2,6 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import creatorAvatar from '../assets/creatorAvatar.png'
 import Link from 'next/link'
+import Typewriter from 'typewriter-effect'
 
 const style = {
   wrapper: `relative`,
@@ -25,7 +26,19 @@ const Hero = () => {
       <div className={style.container}>
         <div className={style.contentWrapper}>
           <div className={style.copyContainer}>
-            <div className={style.title}>Discover Your Next World Here</div>
+            <div className={style.title}>
+              <Typewriter
+                onInit={(typewriter) => {
+                  typewriter
+                    .typeString('Discover Your Next World Here!')
+                    .pauseFor(2500)
+                    .deleteChars(1)
+                    .typeString('!!!!')
+                    .pauseFor(2500)
+                    .start()
+                }}
+              />
+            </div>
             <div className={style.description}>
               Next-NFTs is one of the most popular NFT marketplace in the world.
               <br></br>
@@ -44,9 +57,9 @@ const Hero = () => {
             <div className={style.infoContainer}>
               <Image src={creatorAvatar} height={45} width={45} alt="" />
               <div className={style.author}>
-                <div className={style.name}>JJApe</div>
+                <div className={style.name}>Dope Ape</div>
                 <Link href="https://nextjs.org/docs/api-reference/next/link">
-                  <a className="text-[#1868b7]">JJApe Club</a>
+                  <a className="text-[#1868b7]">Dope NFT Club</a>
                 </Link>
               </div>
             </div>
